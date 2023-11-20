@@ -11,21 +11,22 @@
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 70px;
+  grid-template-rows: 70px 100px;
 }
 
 /* Dashboard CSS */
 
 .container .side-bar {
   grid-column: 1 / 2;
+  grid-row: 1 / 4;
   display: grid;
   grid-template-columns: 250px;
   grid-template-rows: repeat(10, 50px);
   grid-auto-rows: 50px;
-  height: 100vh;
+  height: 100%;
   align-items: center;
 }
 .side-bar {
@@ -36,7 +37,7 @@
   display: flex;
   align-items: center;
   grid-row: 1/3;
-  padding-left: 15px;
+  /* padding-left: 20px; */
 }
 
 .dashboard img {
@@ -51,13 +52,19 @@
 }
 
 .side-item p,
-.dashboard h1{
+.dashboard h1 {
   font-weight: 500;
   color: whitesmoke;
+  margin-left: 5px;
 }
 
 .side-item img {
   width: 30px;
+}
+
+.side-bar :hover{
+  color: #9096c0;
+  cursor: pointer;
 }
 
 /* Top Header CSS */
@@ -105,10 +112,10 @@
 
 /* Bottom Row */
 
-.bottom-row{
+.bottom-row {
   grid-column: 2 / 6;
   display: grid;
-  grid-template-columns: 150px 400px  auto;
+  grid-template-columns: 150px 400px auto;
   grid-template-rows: 100px;
   align-items: center;
 }
@@ -120,11 +127,11 @@
   border-radius: 40px;
 }
 
-.bottom-row .btn{
+.bottom-row .btn {
   justify-self: center;
 }
 
-.bottom-row .btn button{
+.bottom-row .btn button {
   margin: 0 8px;
   height: 45px;
   width: 100px;
@@ -135,4 +142,163 @@
   border: none;
   background-color: #6e75a8;
   color: whitesmoke;
+}
+
+.btn button:hover{
+  background-color: #9096c0;
+
+}
+
+
+/* main-contant */
+
+.main-contant {
+  grid-column: 2 / 6;
+  /* border: 1px solid purple; */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px;
+  background-color: #dad7cd;
+}
+
+.main-contant .your-projects {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  /* border: 1px solid blue; */
+}
+
+.main-contant .announcements {
+  grid-row: 1 / auto;
+  /* border: 1px solid red; */
+}
+
+.main-contant .tranding {
+  /* border: 1px solid green; */
+  grid-column: 2 / 3;
+}
+
+.main-contant > .your-projects p,
+.main-contant > .announcements p,
+.main-contant > .trending > p {
+  /* border: 1px solid black; */
+  height: 50px;
+  font-weight: 500;
+  font-size: 20px;
+  /* position: relative; */
+}
+
+/* Announcements */
+.announcements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.announcements-box {
+  /* border: 1px solid pink; */
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: #fff9fb;
+  padding: 25px;
+  height: 320px;
+}
+
+.announcements-box .box {
+  height: auto;
+  padding: 10px;
+}
+
+.announcements-box .box p {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.announcements-box .border {
+  width: 100%;
+  border: 1px solid lightgray;
+}
+
+/* Trending Section */
+
+.trending {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  /* border: 1px solid red; */
+}
+
+/* .trending > p{
+  text-align: start;
+  font: 400;
+} */
+
+.trending .trending-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  border-radius: 18px;
+  gap: 1rem;
+  padding: 20px;
+  /* border: 1px solid blue; */
+  background-color: #fff9fb;
+}
+
+.trending .trending-box > div {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.trending-box > div > div > .user-name {
+  font-weight: 500;
+  margin: 2px;
+}
+
+.trending div div .profile img {
+  width: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+/* Your Projects Section */
+
+.projects-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: repeat(3  1fr); */
+  gap: 1.5rem;
+}
+.projects-card > div {
+  background-color: #fff9fb;
+  height: 150px;
+  border-radius: 8px;
+  border-left: 8px solid darkgoldenrod;
+  padding: 20px;
+  height: 150px;
+}
+
+/* .projects-card > div > h4 {
+  font-size: 18px;
+  padding: 4px;
+} */
+/* .projects-card > div  p {
+  font-size: 8px;
+  font-weight: 100;
+} */
+
+.projects-card div div {
+  text-align: end;
+  padding: 10px;
+}
+
+.projects-card > div > div > img {
+  width: 30px;
 }
